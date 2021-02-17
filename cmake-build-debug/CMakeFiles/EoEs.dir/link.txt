@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/EoEs.dir/EoEs.c.o  -o EoEs  core/libcore.a core/types/libtypes.a core/types/object/libobject.a core/types/event/libevent.a core/console/libconsole.a 

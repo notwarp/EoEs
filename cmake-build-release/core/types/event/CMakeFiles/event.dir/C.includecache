@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/daniele/devilopment/EoEs/core/types/event/event.c
+include/event.h
+/home/daniele/devilopment/EoEs/core/types/event/include/event.h
+
+/home/daniele/devilopment/EoEs/core/types/event/include/event.h
+stdbool.h
+-
+

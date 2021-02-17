@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/daniele/devilopment/EoEs/core/console/console.c
+include/console.h
+/home/daniele/devilopment/EoEs/core/console/include/console.h
+
+/home/daniele/devilopment/EoEs/core/console/include/console.h
+stdio.h
+-
+
