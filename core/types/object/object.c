@@ -2,7 +2,7 @@
 // Created by Daniele Giuliani on 2/13/21.
 //
 #include "include/object.h"
-#include "object.r"
+#include "object.rapresentation"
 
 object *createObject(void){
     object *obj=malloc(sizeof(object));
