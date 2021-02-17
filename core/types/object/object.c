@@ -4,18 +4,41 @@
 #include "include/object.h"
 #include "object.rapresentation"
 
-object *createObject(void){
-    object *obj=malloc(sizeof(object));
-    return obj;
+Object *createObject(void)
+{
+    Object *obj=malloc(sizeof(Object));
+    if (obj){
+        init_object(obj);
+        return obj;
+    }else{
+        return NULL;
+    }
 }
-void destroyObject(object *obj){
+void destroyObject(Object *obj)
+{
     free(obj);
+    obj = NULL;
+}
+void init_object(Object *obj)
+{
+    uuid_generate_random(obj->type.binuuid);
+    uuid_unparse_upper(obj->type.binuuid, obj->type.uuid);
+}
+void refreshObject(Object *obj)
+{
+    init_object(obj);
 }
 
-bool initSysObject(){
+char *getObjectUUid(Object *obj)
+{
+    return obj->type.uuid;
+}
 
-    Debug printPrimary("UNIT TESTS OBJECT INITIALIZED");
-    object *ob = createObject();
+bool initSysObject()
+{
+    Debug printPrimary("UNIT TESTS OBJECT INITIALIZED...");
+    Object *ob = createObject();
+    init_object(ob);
     if (ob == NULL) return false;
     else{
         destroyObject(ob);
@@ -24,7 +47,7 @@ bool initSysObject(){
     }
 }
 
-//object *searchObjectByName(char * name)
+//Object *searchObjectByName(char * name)
 //{
 //
 //    return obj;

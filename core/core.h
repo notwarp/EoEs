@@ -6,5 +6,6 @@
 #define EOES_CORE_H
 
 #include "types/types.h"
+
 bool initSysEoEs();
 #endif //EOES_CORE_H

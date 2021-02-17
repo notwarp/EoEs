@@ -1,4 +1,7 @@
+#include "../types.h"
+
 struct EVENT
 {
-
+    Type type;
+    void (*initEvent)(Event *evt);
 };

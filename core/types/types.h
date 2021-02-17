@@ -16,6 +16,11 @@
  * Application specific headers required by the following declarations
  * (the implementation will import its specific dependencies):
  */
+typedef struct TYPE Type;
+struct TYPE {
+    uuid_t  binuuid;
+    char    uuid[UUID_STR_LEN];
+};
 
 #include "event/include/event.h"
 #include "object/include/object.h"
@@ -36,9 +41,13 @@
 /* Function prototypes here. */
 
 EXTERN void typesInit(void);
-EXTERN object * createObject(void);
-EXTERN void destroyObject(object *obj);
-EXTERN void searchObjectByName(object *obj);
+EXTERN Object * createObject(void);
+EXTERN void refreshObject(Object *obj);
+EXTERN char *getObjectUUid(Object *obj);
+EXTERN void destroyObject(Object *obj);
+EXTERN Event * createEvent(void);
+EXTERN void destroyEvent(Event *evt);
+EXTERN void searchObjectByName(Object *obj);
 
 /* Function Usable By this Module */
 

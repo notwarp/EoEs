@@ -9,12 +9,12 @@
 #include <stdbool.h>
 #include "../../../console/include/console.h"
 
+#include <uuid/uuid.h>
 /* TYPES */
 
-typedef struct OBJECT object;
-
+typedef struct OBJECT Object;
 /* FUNCTIONS */
 
 bool initSysObject();
-
+void init_object(Object *obj);
 #endif //EOES_OBJECT_H

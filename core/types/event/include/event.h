@@ -6,8 +6,9 @@
 #define EOES_EVENT_H
 
 #include <stdbool.h>
+#include <uuid/uuid.h>
 
-typedef struct EVENT event;
+typedef struct EVENT Event;
 
 bool initSysEvent();
 
