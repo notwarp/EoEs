@@ -4,7 +4,10 @@
 
 #ifndef EOES_EVENT_H
 #define EOES_EVENT_H
+
 #include <stdbool.h>
+
+typedef struct EVENT event;
 
 bool initSysEvent();
 
