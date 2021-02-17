@@ -37,8 +37,12 @@ char *getObjectUUid(Object *obj)
 bool initSysObject()
 {
     Debug printPrimary("UNIT TESTS OBJECT INITIALIZED...");
+    Debug printPrimary("CREATING OBJECT...");
     Object *ob = createObject();
     init_object(ob);
+    Debug printPrimary("OBJECT UUID:");
+    Debug printWarning(getObjectUUid(ob));
+    Debug printSuccess("OBJECT CREATED SUCCESSFULLY!");
     if (ob == NULL) return false;
     else{
         destroyObject(ob);

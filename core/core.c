@@ -11,14 +11,5 @@ bool initSysEoEs()
         return false;
     }
     Debug printSuccess("UNIT TESTS TYPES TERMINATED!");
-    Object *obj=createObject();
-    if (obj){
-        printWarning(getObjectUUid(obj));
-        getObjectUUid(obj);
-        printSuccess("OBJECT CREATED SUCCESSFULLY!");
-    }else{
-        return false;
-    }
-    destroyObject(obj);
     return true;
 }
