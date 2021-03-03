@@ -19,10 +19,11 @@ void destroyObject(Object *obj)
     free(obj);
     obj = NULL;
 }
-void init_object(Object *obj)
+Type *init_object(Object *obj)
 {
     uuid_generate_random(obj->type.binuuid);
     uuid_unparse_upper(obj->type.binuuid, obj->type.uuid);
+    return &obj->type;
 }
 void refreshObject(Object *obj)
 {
@@ -43,6 +44,7 @@ bool initSysObject()
     Debug printPrimary("OBJECT UUID:");
     Debug printWarning(getObjectUUid(ob));
     Debug printSuccess("OBJECT CREATED SUCCESSFULLY!");
+    searchObjectByName("test");
     if (ob == NULL) return false;
     else{
         destroyObject(ob);
@@ -51,8 +53,12 @@ bool initSysObject()
     }
 }
 
-//Object *searchObjectByName(char * name)
-//{
-//
-//    return obj;
-//}
+Object *searchObjectByName(char * name)
+{
+
+    #pragma omp parallel default (none)
+    {
+        printf(AC_MAGENTA"Hello from process: %d\n"AC_RESET, omp_get_thread_num());
+    }
+    //return obj;
+}

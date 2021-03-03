@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <uuid/uuid.h>
+#include <omp.h>
 /*
  * Application specific headers required by the following declarations
  * (the implementation will import its specific dependencies):
@@ -47,8 +48,8 @@ EXTERN char *getObjectUUid(Object *obj);
 EXTERN void destroyObject(Object *obj);
 EXTERN Event * createEvent(void);
 EXTERN void destroyEvent(Event *evt);
-EXTERN void searchObjectByName(Object *obj);
-
+EXTERN Object *searchObjectByName(char *name);
+Type *init_object(Object *obj);
 /* Function Usable By this Module */
 
 bool initSysTypes();

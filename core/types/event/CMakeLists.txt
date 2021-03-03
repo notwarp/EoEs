@@ -1,2 +1,2 @@
-add_library(event event.c)
+add_library(event OBJECT event.c)
 target_link_libraries(event PUBLIC uuid)

@@ -1,0 +1,1 @@
+add_library(biome OBJECT biome.c include/biome.h)
